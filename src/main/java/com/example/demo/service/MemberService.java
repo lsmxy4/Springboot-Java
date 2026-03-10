@@ -15,7 +15,7 @@ public class MemberService {
     public final MemberRepository memberRepository;
 
     public  Long join(String name,String email){
-        Member member = new Member();
+        Member member = new Member(name, email);
         return memberRepository.save(member).getId();
     }
 

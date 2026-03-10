@@ -1,4 +1,7 @@
 package com.example.demo.dto;
 
-public class CreateMemberRequest {
+public record CreateMemberRequest (
+        String name,
+        String email
+){
 }
