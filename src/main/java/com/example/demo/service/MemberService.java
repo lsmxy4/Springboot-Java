@@ -20,6 +20,12 @@ public class MemberService {
     }
 
     @Transactional(readOnly = true)
+    public Member findById(Long id){
+        return memberRepository.findById(id)
+                .orElseThrow(()->new IllegalArgumentException("Member not Found:"+id));
+    }
+
+    @Transactional(readOnly = true)
     public List<Member> findAll(){
         return memberRepository.findAll();
     }
